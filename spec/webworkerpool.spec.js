@@ -155,7 +155,6 @@ describe('WebWorkerPool for Q', function() {
 });
 describe('WebWorkerPoolFactory for Q', function() {
 	beforeEach(function() {
-		this.webWorkerPool = new WebWorkerPool(Q, 'hello-worker.js', 1);
 		this.webWorkerPoolFactory = new WebWorkerPoolFactory(Q);
 	});
 

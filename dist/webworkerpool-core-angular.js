@@ -1,3 +1,8 @@
+/**
+ * @license webworkerpool.js 1.0.0
+ * Created by http://www.bjoerne.com
+ * License: GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
+ */
 (function() {
 	WebWorkerPoolFactory = function(q) {
 		this.q = q;
@@ -79,6 +84,11 @@
 		this.availableWorkers = this.capacity;
 	};
 })();
+/**
+ * @license webworkerpool.js 1.0.0
+ * Created by http://www.bjoerne.com
+ * License: GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
+ */
 (function() {
 	var module = angular.module('webWorkerPool', ['ng']);
 
