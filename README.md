@@ -1,6 +1,8 @@
 webworkerpool.js
 ================
 
+Current version: 1.0.1
+
 webworkerpool.js is a JavaScript library that can be used to manage a pool of web workers. It requires q.js or AngularJS.
 If you want to use this library in an AngularJS application, a module with injectable services is provided.
 
