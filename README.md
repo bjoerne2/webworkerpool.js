@@ -32,18 +32,25 @@ Declare the **webWorkerPool** module as a module dependency:
 
     myApp = angular.module('myApp', ['webWorkerPool']);
 
-Then just inject either **$webWorkerPoolFactory** or **$webWorkerPool**. The AngularJS **$q** is injected automatically and you don't have to care about it.
+Then just inject either **webWorkerPoolFactory** or **webWorkerPool**. The AngularJS **$q** is injected automatically and you don't have to care about it.
 
-With AngularJS you can configure default values for the worker url and the capacity of the pool by declaring constants for the module. If you inject a WebWorkerPool it will already be set up with these values.
+With AngularJS you can configure default values for the worker url and the capacity of the pool. If you inject a WebWorkerPool it will already be set up with these values.
+The defaults must be set on the **webWorkerPoolProvider**:
 
-   	webWorkerPoolModule = angular.module('webWorkerPool');
-   	webWorkerPoolModule.constant('WEB_WORKER_POOL_WORKER_URL', 'hello-worker.js');
-   	webWorkerPoolModule.constant('WEB_WORKER_POOL_CAPACITY', 8);
+   	angular.module('webWorkerPool').config(function(webWorkerPoolProvider) {
+		webWorkerPoolProvider.workerUrl('hello-worker.js');
+		webWorkerPoolProvider.capacity(8);
+	});
 
+Or inject **webWorkerPoolFactory** first and then create the pool:
+
+    webWorkerPool = webWorkerPoolFactory.createPool('hello-worker.js', 8);
 
 ### Use the WebWorkerPool
 
-Once you have a web worker pool you can post messages, get a promise and register a then-callback like this:
+The usage of a WebWorkerPool is similar to that of a worker of the Web Worker API. To send a message to the worker, there is a **postMessage** method. To receive an answer of the worker
+you have to register a callback. In constrast to the Web Worker API, postMessage returns a **promise** and the callback is registered by calling **then** on the promise. So there
+is no need to set an **onmessage** callback. This is done internally by this library.
 
     this.webWorkerPool.postMessage("Bob").then(function(event) {
         console.log(event.data);

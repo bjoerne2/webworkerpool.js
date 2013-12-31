@@ -4,8 +4,6 @@ describe('WebWorkerPool for AngularJS', function() {
 		webWorkerPoolProvider.workerUrl('hello-worker.js');
 		webWorkerPoolProvider.capacity(8);
 	});
-	webWorkerPoolModule.constant('WEB_WORKER_POOL_WORKER_URL', 'hello-worker.js');
-	webWorkerPoolModule.constant('WEB_WORKER_POOL_CAPACITY', 1);
 
 	beforeEach(function() {
 		var injector = angular.injector(['webWorkerPool']);
