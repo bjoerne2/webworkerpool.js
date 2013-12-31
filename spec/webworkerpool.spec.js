@@ -1,12 +1,15 @@
 describe('WebWorkerPool for AngularJS', function() {
 
-	var webWorkerPoolModule = angular.module('webWorkerPool');
+	var webWorkerPoolModule = angular.module('webWorkerPool').config(function(webWorkerPoolProvider) {
+		webWorkerPoolProvider.workerUrl('hello-worker.js');
+		webWorkerPoolProvider.capacity(8);
+	});
 	webWorkerPoolModule.constant('WEB_WORKER_POOL_WORKER_URL', 'hello-worker.js');
 	webWorkerPoolModule.constant('WEB_WORKER_POOL_CAPACITY', 1);
 
 	beforeEach(function() {
 		var injector = angular.injector(['webWorkerPool']);
-		this.webWorkerPool = injector.get('$webWorkerPool');
+		this.webWorkerPool = injector.get('webWorkerPool');
 	});
 
 	it("should work with default values", function() {
@@ -25,7 +28,7 @@ describe('WebWorkerPool for AngularJS', function() {
 describe('WebWorkerPoolFactory for AngularJS', function() {
 	beforeEach(function() {
 		var injector = angular.injector(['webWorkerPool']);
-		this.webWorkerPoolFactory = injector.get('$webWorkerPoolFactory');
+		this.webWorkerPoolFactory = injector.get('webWorkerPoolFactory');
 	});
 
 	it("should queue web worker request when pool has no capacity", function() {

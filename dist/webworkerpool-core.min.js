@@ -1,5 +1,5 @@
 /**
- * @license webworkerpool.js 1.0.0
+ * @license webworkerpool.js 1.0.1
  * Created by http://www.bjoerne.com
  * License: GPLv3 (http://www.gnu.org/licenses/gpl-3.0.html)
  */
