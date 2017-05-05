@@ -1,0 +1,22 @@
+{
+  "name": "webworkerpool.js",
+  "version": "1.0.0",
+  "description": "JavaScript library that can be used to manage a pool of web workers",
+  "main": "dist/webworkerpool-core-angular.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjoerne2/webworkerpool.js.git"
+  },
+  "keywords": [
+    "webworkerpool"
+  ],
+  "author": "Björn Weinbrenner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjoerne2/webworkerpool.js/issues"
+  },
+  "homepage": "https://github.com/bjoerne2/webworkerpool.js#readme"
+}
