@@ -1,5 +1,5 @@
 {
-  "name": "webworkerpool.js",
+  "name": "webworkerpool",
   "version": "1.0.0",
   "description": "JavaScript library that can be used to manage a pool of web workers",
   "main": "dist/webworkerpool-core-angular.js",
